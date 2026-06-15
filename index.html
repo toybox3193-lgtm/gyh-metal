@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guangyuan Hang Metal Industry Co., Ltd. | 广源行金属工业有限公司</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:#333;line-height:1.6;background:#f8f7f4}
+:root{--navy:#1B2A4A;--gold:#C49A3C;--light:#F2EDE8;--white:#fff;--gray:#666;--dark:#222}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+nav .logo{color:var(--white);font-weight:700;font-size:1rem}
+nav .logo span{color:var(--gold)}
+nav .nav-links{display:flex;gap:1.5rem;align-items:center;list-style:none}
+nav .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;transition:color .2s}
+nav .nav-links a:hover{color:var(--gold)}
+.lang-btn{background:var(--gold);color:var(--white);border:none;padding:.4rem 1rem;border-radius:4px;cursor:pointer;font-weight:600;font-size:.85rem}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3360 50%,#0d1f3d 100%);color:var(--white);padding:8rem 2rem 5rem;text-align:center;min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.5rem}
+.hero .subtitle{font-size:1.2rem;color:rgba(255,255,255,.7);margin-bottom:1.5rem}
+.hero .values{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
+.hero .value-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.8rem 1.5rem;border-radius:6px;font-size:.95rem;color:var(--gold)}
+
+/* SECTIONS */
+section{padding:4rem 2rem}
+.sec-title{text-align:center;margin-bottom:3rem}
+.sec-title h2{font-size:2rem;color:var(--navy)}
+.sec-title .en{font-size:.95rem;color:var(--gray);text-transform:uppercase;letter-spacing:3px}
+.sec-title .line{width:60px;height:3px;background:var(--gold);margin:.8rem auto 0}
+.container{max-width:1200px;margin:0 auto}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.stat-card{background:var(--white);padding:1.5rem;border-radius:8px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);border-top:3px solid var(--gold)}
+.stat-card .num{font-size:2rem;font-weight:700;color:var(--gold)}
+.stat-card .label{font-size:.9rem;color:var(--navy);font-weight:600;margin:.3rem 0}
+.stat-card .desc{font-size:.8rem;color:var(--gray)}
+.profile-text{max-width:900px;margin:0 auto;font-size:.95rem;line-height:1.8;color:var(--gray)}
+.profile-text strong{color:var(--navy)}
+
+/* ADVANTAGES */
+.advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.adv-card{background:var(--white);padding:1.8rem 1.8rem 1.8rem 2.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative}
+.adv-card .num{position:absolute;top:18px;left:18px;width:32px;height:32px;background:var(--gold);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem}
+.adv-card h3{color:var(--navy);margin-bottom:.6rem;font-size:1rem}
+.adv-card p{font-size:.85rem;color:var(--gray);line-height:1.7}
+
+/* EQUIPMENT PHOTOS */
+.equip-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem}
+.equip-photo{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.equip-photo img{width:100%;height:220px;object-fit:cover;display:block}
+.equip-photo .caption{padding:.8rem 1rem;font-weight:600;color:var(--navy);font-size:.9rem;text-align:center}
+
+/* EQUIPMENT TABLE */
+.equip-section{margin-bottom:2rem}
+.equip-section h3{background:var(--navy);color:var(--white);padding:.6rem 1.2rem;font-size:.95rem;border-radius:6px 6px 0 0}
+.equip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ddd;border-radius:0 0 6px 6px;overflow:hidden}
+.equip-col{background:var(--white);padding:1rem}
+.equip-col .cat{font-weight:700;color:var(--navy);margin-bottom:.6rem;font-size:.9rem}
+.equip-col .item{display:flex;justify-content:space-between;padding:.3rem 0;font-size:.83rem;border-bottom:1px dotted #eee}
+.equip-col .item .qty{color:var(--gold);font-weight:600}
+
+/* PRODUCTS WITH IMAGES */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.product-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .2s}
+.product-card:hover{transform:translateY(-3px)}
+.product-card img{width:100%;height:160px;object-fit:cover;display:block}
+.product-card .p-info{padding:1rem;text-align:center}
+.product-card .p-info .icon{font-size:1.5rem;margin-bottom:.3rem}
+.product-card h4{color:var(--navy);font-size:.85rem}
+
+/* ABOUT IMAGE */
+.about-image{text-align:center;margin-top:2rem}
+.about-image img{max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+
+/* CUSTOMERS */
+.customers-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center}
+.customer-card{background:var(--white);padding:1.5rem 2rem;border-radius:8px;color:var(--gray);font-size:.9rem;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--white);padding:4rem 2rem 2rem}
+footer .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1000px;margin:0 auto 2rem}
+footer h3{color:var(--gold);margin-bottom:1rem;font-size:1.1rem}
+footer p,footer a{color:rgba(255,255,255,.8);font-size:.9rem;line-height:1.8;text-decoration:none}
+footer .bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:.8rem}
+
+@media(max-width:768px){
+  nav .nav-links{display:none}
+  .hero h1{font-size:1.5rem}
+  .stats,.advantages{grid-template-columns:1fr}
+  .equip-photos,.equip-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  footer .contact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><span>GYH</span> <span class="cn">金属工业</span><span class="en">Metal Industry</span></div>
+  <ul class="nav-links">
+    <li><a href="#about" class="cn">公司简介</a><a href="#about" class="en">About</a></li>
+    <li><a href="#advantage" class="cn">公司优势</a><a href="#advantage" class="en">Advantage</a></li>
+    <li><a href="#equipment" class="cn">设备投入</a><a href="#equipment" class="en">Equipment</a></li>
+    <li><a href="#products" class="cn">产品应用</a><a href="#products" class="en">Products</a></li>
+    <li><a href="#contact" class="cn">联系我们</a><a href="#contact" class="en">Contact</a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()">中 / EN</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <h1 class="cn">广源行金属工业有限公司</h1>
+  <h1 class="en">Guangyuan Hang Metal Industry Co., Ltd.</h1>
+  <p class="subtitle cn">昆山市广源行金属工业有限公司  |  Est. 2003</p>
+  <p class="subtitle en">Kunshan GYH Metal Industry Co., Ltd.  |  Est. 2003</p>
+  <div class="values">
+    <div class="value-item cn">严格管理</div><div class="value-item cn">快速高效</div>
+    <div class="value-item cn">持续改进</div><div class="value-item cn">客户满意</div>
+    <div class="value-item en">Rigorous Quality</div><div class="value-item en">Agile & Efficient</div>
+    <div class="value-item en">Continuous Improvement</div><div class="value-item en">Customer Satisfaction</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-title">
+      <h2 class="cn">公司简介</h2><h2 class="en">Company Profile</h2>
+      <p class="en">ABOUT US</p><p class="cn">关于我们</p><div class="line"></div>
+    </div>
+    <div class="stats">
+      <div class="stat-card"><div class="num">2003</div><div class="label cn">成立年份</div><div class="label en">Established</div><div class="desc cn">22+年行业经验</div><div class="desc en">22+ Years Experience</div></div>
+      <div class="stat-card"><div class="num">4,500m²</div><div class="label cn">工厂面积</div><div class="label en">Facility</div><div class="desc cn">江苏昆山周市镇</div><div class="desc en">Kunshan, Jiangsu</div></div>
+      <div class="stat-card"><div class="num">60+</div><div class="label cn">专利数量</div><div class="label en">Patents</div><div class="desc cn">IATF 16949认证</div><div class="desc en">IATF 16949 Certified</div></div>
+    </div>
+    <div class="profile-text cn">
+      <p>自<strong>2003年</strong>成立以来，广源行一直秉承<strong>"精诚合作，携手共赢"</strong>的企业理念，致力于成为一家集<strong>研发、生产、销售</strong>为一体的专业金属加工制造商。公司位于江苏省昆山市，占地<strong>4,500平方米</strong>，拥有<strong>60余项</strong>发明及实用新型专利。</p>
+      <br>
+      <p><strong>核心产品：</strong>汽车配件（汽车饰条、电池镍片、铰链等）、半导体晶圆框架、灯具五金、卫浴五金、家具五金、铰链、控制器盒拉深件、电子类产品五金配件、新能源电池配件等。</p>
+    </div>
+    <div class="profile-text en">
+      <p>Since our founding in <strong>2003</strong>, GYH has upheld the philosophy of <strong>"Sincere Cooperation, Win-Win Together,"</strong> committed to becoming a fully integrated metal processing manufacturer combining <strong>R&D, production, and sales</strong>. Located in Kunshan, Jiangsu Province, our <strong>4,500 m²</strong> facility houses <strong>60+</strong> invention and utility model patents.</p>
+      <br>
+      <p><strong>Core Products:</strong> Automotive Parts, Semiconductor Wafer Frames, Lighting Hardware, Bathroom & Sanitary Hardware, Furniture Fittings, Controller Box Parts, Electronic Hardware, and New Energy Battery Accessories.</p>
+    </div>
+    <div class="about-image">
+      <img src="images/machining.jpg" alt="CNC Machining" style="max-height:400px">
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGE -->
+<section id="advantage" style="background:var(--light)">
+  <div class="container">
+    <div class="sec-title">
+      <h2 class="cn">公司优势</h2><h2 class="en">Company Advantage</h2>
+      <p class="en">WHY CHOOSE US</p><p class="cn">为什么选择我们</p><div class="line"></div>
+    </div>
+    <div class="advantages">
+      <div class="adv-card"><div class="num">1</div><h3 class="cn">研发团队</h3><h3 class="en">R&D Team</h3><p class="cn">10+名经验丰富的工程师，与国内知名企业合作，拥有60余项发明及实用新型专利。</p><p class="en">10+ senior engineers with 60+ invention and utility model patents.</p></div>
+      <div class="adv-card"><div class="num">2</div><h3 class="cn">认证与荣誉</h3><h3 class="en">Certifications</h3><p class="cn">IATF 16949、ISO 50001、ISO 14001认证。国家高新技术企业。</p><p class="en">IATF 16949, ISO 50001, ISO 14001. National High-Tech Enterprise.</p></div>
+      <div class="adv-card"><div class="num">3</div><h3 class="cn">质量保证</h3><h3 class="en">Quality</h3><p class="cn">专业检测团队，先进检测设备，确保产品质量稳定可靠。</p><p class="en">Dedicated QC team with advanced testing equipment.</p></div>
+      <div class="adv-card"><div class="num">4</div><h3 class="cn">生产能力</h3><h3 class="en">Production</h3><p class="cn">模具、冲压、钣金、机加工、焊接、抛光等多个生产车间。</p><p class="en">Mold making, stamping, CNC, welding, polishing in-house.</p></div>
+      <div class="adv-card"><div class="num">5</div><h3 class="cn">研发实验室</h3><h3 class="en">R&D Lab</h3><p class="cn">2.5次元投影仪、硬度计、盐雾测试仪、万能材料试验机等。</p><p class="en">2.5D projector, hardness tester, salt spray chamber, and more.</p></div>
+      <div class="adv-card"><div class="num">6</div><h3 class="cn">工艺指导</h3><h3 class="en">Engineering</h3><p class="cn">深耕行业多年的工艺工程师亲自指导，提供全方位技术支持。</p><p class="en">Senior engineers provide hands-on technical guidance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section id="equipment">
+  <div class="container">
+    <div class="sec-title">
+      <h2 class="cn">设备投入</h2><h2 class="en">Equipment Investment</h2>
+      <p class="en">OUR MACHINERY</p><p class="cn">我们的设备</p><div class="line"></div>
+    </div>
+
+    <!-- Equipment photos -->
+    <div class="equip-photos">
+      <div class="equip-photo"><img src="images/stamping.jpg" alt="Stamping"><div class="caption cn">冲压设备</div><div class="caption en">Stamping Equipment</div></div>
+      <div class="equip-photo"><img src="images/welding.jpg" alt="Welding"><div class="caption cn">焊接设备</div><div class="caption en">Welding Equipment</div></div>
+      <div class="equip-photo"><img src="images/cleaning.jpg" alt="Cleaning"><div class="caption cn">清洗和抛光</div><div class="caption en">Cleaning & Polishing</div></div>
+      <div class="equip-photo"><img src="images/printing.jpg" alt="Printing"><div class="caption cn">印刷设备</div><div class="caption en">Printing Equipment</div></div>
+      <div class="equip-photo"><img src="images/cnc.jpg" alt="CNC"><div class="caption cn">CNC加工中心</div><div class="caption en">CNC Machining Center</div></div>
+      <div class="equip-photo"><img src="images/inspection.jpg" alt="Inspection"><div class="caption cn">检测设备</div><div class="caption en">Inspection Equipment</div></div>
+    </div>
+
+    <!-- Equipment lists -->
+    <div class="equip-section">
+      <h3 class="cn">冲压设备</h3><h3 class="en">Stamping Equipment</h3>
+      <div class="equip-grid">
+        <div class="equip-col"><div class="item"><span>400T Dual-Axis</span><span class="qty">×1</span></div><div class="item"><span>250T Dual-Axis</span><span class="qty">×2</span></div><div class="item"><span>315T Press</span><span class="qty">×1</span></div><div class="item"><span>200T Press</span><span class="qty">×3</span></div></div>
+        <div class="equip-col"><div class="item"><span>160T Press</span><span class="qty">×2</span></div><div class="item"><span>125T Press</span><span class="qty">×1</span></div><div class="item"><span>110T Press</span><span class="qty">×3</span></div><div class="item"><span>80T Press</span><span class="qty">×3</span></div></div>
+        <div class="equip-col"><div class="item"><span>63T Press</span><span class="qty">×3</span></div><div class="item"><span>25T/16T/6T</span><span class="qty">×1ea</span></div><div class="item"><span>Three-in-One Line</span><span class="qty">×1</span></div><div class="item"><span>Guillotine Shears</span><span class="qty">×1</span></div></div>
+      </div>
+    </div>
+    <div class="equip-section">
+      <h3 class="cn">检测设备</h3><h3 class="en">Inspection & Testing</h3>
+      <div class="equip-grid">
+        <div class="equip-col"><div class="item"><span>2.5D Projector</span><span class="qty">×1</span></div><div class="item"><span>Hardness Tester</span><span class="qty">×2</span></div><div class="item"><span>Profile Projector</span><span class="qty">×1</span></div></div>
+        <div class="equip-col"><div class="item"><span>Salt Spray Tester</span><span class="qty">×1</span></div><div class="item"><span>Universal Material Tester</span><span class="qty">×1</span></div><div class="item"><span>Coating Thickness Gauge</span><span class="qty">×1</span></div></div>
+        <div class="equip-col"><div class="item"><span>Calipers</span><span class="qty">×15</span></div><div class="item"><span>Micrometers</span><span class="qty">×10</span></div><div class="item"><span>Abrasion Tester</span><span class="qty">×1</span></div></div>
+      </div>
+    </div>
+    <div class="equip-section">
+      <h3 class="cn">加工及其他设备</h3><h3 class="en">Fabrication & Auxiliary</h3>
+      <div class="equip-grid">
+        <div class="equip-col"><div class="item"><span>CNC Machining Center</span><span class="qty">×5</span></div><div class="item"><span>CNC Laser Cutter</span><span class="qty">×2</span></div><div class="item"><span>Lathe</span><span class="qty">×1</span></div><div class="item"><span>Radial Drill/Mill</span><span class="qty">×8</span></div></div>
+        <div class="equip-col"><div class="item"><span>Argon Arc Welder</span><span class="qty">×1</span></div><div class="item"><span>Gas-Shielded Welder</span><span class="qty">×2</span></div><div class="item"><span>Laser Welder</span><span class="qty">×2</span></div><div class="item"><span>Diffusion Welder</span><span class="qty">×2</span></div></div>
+        <div class="equip-col"><div class="item"><span>Ultrasonic Cleaner</span><span class="qty">×2</span></div><div class="item"><span>High-Temp Oven</span><span class="qty">×3</span></div><div class="item"><span>Screen/Pad Printer</span><span class="qty">×6</span></div><div class="item"><span>Surface Grinder</span><span class="qty">×2</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" style="background:var(--light)">
+  <div class="container">
+    <div class="sec-title">
+      <h2 class="cn">产品及应用</h2><h2 class="en">Product & Application</h2>
+      <p class="en">WHAT WE MAKE</p><p class="cn">我们的产品</p><div class="line"></div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card"><img src="images/automotive-trim.jpg" alt="Automotive Trim"><div class="p-info"><h4 class="cn">汽车饰条</h4><h4 class="en">Automotive Trim</h4></div></div>
+      <div class="product-card"><img src="images/automotive-parts.jpg" alt="Automotive Parts"><div class="p-info"><h4 class="cn">汽车配件</h4><h4 class="en">Automotive Parts</h4></div></div>
+      <div class="product-card"><img src="images/battery.jpg" alt="Battery"><div class="p-info"><h4 class="cn">新能源电池配件</h4><h4 class="en">New Energy Battery</h4></div></div>
+      <div class="product-card"><img src="images/machining.jpg" alt="Machining"><div class="p-info"><h4 class="cn">机加工件</h4><h4 class="en">Machining Products</h4></div></div>
+      <div class="product-card"><img src="images/progressive.jpg" alt="Progressive"><div class="p-info"><h4 class="cn">连续冲压件</h4><h4 class="en">Progressive Press</h4></div></div>
+      <div class="product-card"><img src="images/tooling.jpg" alt="Tooling"><div class="p-info"><h4 class="cn">模具设计与开发</h4><h4 class="en">Tooling & Die Design</h4></div></div>
+      <div class="product-card" style="background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center"><div class="p-info"><div class="icon">🔩</div><h4 class="cn" style="color:var(--gold)">灯具/卫浴/家具五金</h4><h4 class="en" style="color:var(--gold)">Hardware & Fittings</h4></div></div>
+      <div class="product-card" style="background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center"><div class="p-info"><div class="icon">🔗</div><h4 class="cn" style="color:var(--gold)">铰链/控制器盒/电子配件</h4><h4 class="en" style="color:var(--gold)">Hinges & Electronics</h4></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS -->
+<section id="customers">
+  <div class="container">
+    <div class="sec-title">
+      <h2 class="cn">合作伙伴</h2><h2 class="en">Our Customers</h2>
+      <p class="en">TRUSTED BY</p><p class="cn">信任我们的客户</p><div class="line"></div>
+    </div>
+    <div class="customers-grid">
+      <div class="customer-card cn">国内外知名汽车零部件企业</div><div class="customer-card en">Global Automotive Tier Suppliers</div>
+      <div class="customer-card cn">半导体行业领先企业</div><div class="customer-card en">Leading Semiconductor Companies</div>
+      <div class="customer-card cn">新能源电池制造商</div><div class="customer-card en">New Energy Battery Manufacturers</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="contact-grid">
+    <div>
+      <h3 class="cn">联系我们</h3><h3 class="en">Contact Us</h3>
+      <p><strong class="cn">昆山市广源行金属工业有限公司</strong><strong class="en">Kunshan GYH Metal Industry Co., Ltd.</strong></p>
+      <p class="cn">广源行金属工业有限公司</p><p class="en">Guangyuan Hang Metal Industry Co., Ltd.</p>
+    </div>
+    <div>
+      <p class="cn">📍 江苏省昆山市周市镇青阳北路519号2号房</p>
+      <p class="en">📍 Building 2, No. 519, Qingyang North Road, Zhoushi Town, Kunshan, Jiangsu, China</p>
+      <p>📞 +86-512-57188882</p>
+      <p>📧 403153462@qq.com</p>
+      <p>🌐 www.gyhks.net</p>
+    </div>
+  </div>
+  <div class="bottom"><p>&copy; 2026 Guangyuan Hang Metal Industry Co., Ltd. All rights reserved.</p></div>
+</footer>
+
+<script>
+let lang='cn';
+function toggleLang(){lang=lang==='cn'?'en':'cn';applyLang()}
+function applyLang(){
+  document.querySelectorAll('.cn').forEach(e=>e.style.display=lang==='cn'?'':'none');
+  document.querySelectorAll('.en').forEach(e=>e.style.display=lang==='en'?'':'none');
+}
+applyLang();
+</script>
+</body>
+</html>
